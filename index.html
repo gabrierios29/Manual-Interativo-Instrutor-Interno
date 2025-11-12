@@ -233,7 +233,7 @@
                 </div>
             </div>
             
-            <!-- Item 3: Material Didático (NOVA SEÇÃO) -->
+            <!-- Item 3: Material Didático -->
             <div class="accordion-item bg-white rounded-xl shadow-md overflow-hidden">
                 <!-- Header do Acordeão 3 -->
                 <button class="accordion-header w-full flex justify-between items-center p-6 text-left">
@@ -288,6 +288,66 @@
                     </div>
                 </div>
             </div>
+
+            <!-- Item 4: Consulta de Pagamento (NOVA SEÇÃO) -->
+            <div class="accordion-item bg-white rounded-xl shadow-md overflow-hidden">
+                <!-- Header do Acordeão 4 -->
+                <button class="accordion-header w-full flex justify-between items-center p-6 text-left">
+                    <h2 class="text-xl sm:text-2xl font-semibold text-[#325565]">
+                        4. Como Consultar seu Processo de Pagamento (SPU)
+                    </h2>
+                    <svg class="accordion-icon w-6 h-6 text-[#F15A22] transition-transform duration-300" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m19.5 8.25-7.5 7.5-7.5-7.5" />
+                    </svg>
+                </button>
+                <!-- Conteúdo do Acordeão 4 -->
+                <div class="accordion-content max-h-0 overflow-hidden">
+                    <div class="p-6 pt-0 space-y-6">
+                        
+                        <!-- Bloco de Atenção -->
+                        <div class="bg-[#F15A22]/20 border-l-4 border-[#F15A22] text-[#325565] p-4 rounded-md mb-6" role="alert">
+                            <p class="font-bold text-[#F15A22]">Prazo de Despacho</p>
+                            <p>O processo de pagamento é despachado em torno de <strong>10 dias úteis</strong> após o fim do evento de capacitação, desde que toda a documentação (Termo de Anuência e Declaração de Instrutoria) tenha sido entregue a tempo.</p>
+                        </div>
+                        
+                        <h3 class="text-lg font-semibold text-[#325565] mb-4">Tutorial de Acesso ao SPU</h3>
+                    
+                        <!-- Passo 1: Guardião -->
+                        <div class="step mb-4">
+                            <p class="text-gray-600 mb-3"><strong>1.</strong> Faça login no Guardião e acesse o módulo <strong>"SPU Digital Corporativo"</strong>:</p>
+                            <img src="https://i.postimg.cc/bNP49F2J/image.png" alt="Acesso SPU Digital Corporativo" class="rounded-md border border-gray-300 shadow-sm w-full">
+                        </div>
+    
+                        <!-- Passo 2: Consultar Processo -->
+                        <div class="step mb-4">
+                            <p class="text-gray-600 mb-3"><strong>2.</strong> No menu, clique em <strong>"Consultar Processo"</strong>:</p>
+                            <img src="https://i.postimg.cc/RVbQZWm2/image.png" alt="Consultar Processo" class="rounded-md border border-gray-300 shadow-sm w-full">
+                        </div>
+    
+                        <!-- Passo 3: Preenchimento -->
+                        <div class="step mb-4">
+                            <p class="text-gray-600 mb-3"><strong>3.</strong> Preencha os campos da consulta da seguinte forma:</p>
+                            <ul class="list-disc list-inside space-y-2 text-gray-600 mb-3 pl-4">
+                                <li><strong>Tipo de Processo:</strong> "Processos Decisórios Gerenciais Administrativos"</li>
+                                <li><strong>Assunto:</strong> "Administrativo Financeiro - Solicitação de Pagamento"</li>
+                                <li><strong>Proprietário:</strong> "IMPARH" | <strong>Setor:</strong> "DIFAP"</li>
+                                <li><strong>CPF/CNPJ:</strong> Digite seu CPF (somente números)</li>
+                                <li><strong>Data de Criação:</strong> Do primeiro dia do ano até a data da consulta (para ver todos os processos do ano).</li>
+                            </ul>
+                            <img src="https://i.postimg.cc/7LcZCy6t/image.png" alt="Página de Consulta SPU" class="rounded-md border border-gray-300 shadow-sm w-full">
+                        </div>
+
+                        <!-- Bloco de Aviso Final -->
+                        <div class="bg-[#00A0DC]/10 border-l-4 border-[#00A0DC] text-[#325565] p-4 rounded-md" role="alert">
+                            <p class="font-bold text-[#00A0DC]">Não tem acesso ao SPU?</p>
+                            <p>Caso você não tenha acesso ao "SPU Digital Corporativo", consulte o Protocolo do seu órgão ou o setor de Folha de Pagamento.</p>
+                            <p class="mt-2">Para mais dúvidas, entre em contato conosco através dos telefones <strong>2018.0112</strong> ou <strong>2018.0122</strong>.</p>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
 
         </div> <!-- Fim do Container do Acordeão -->
 
@@ -448,7 +508,8 @@
                             showOptions([
                                 { text: 'Dúvidas sobre Credenciamento', id: 'credenciamento' },
                                 { text: 'Documentos (Termo e Declaração)', id: 'precourse' },
-                                { text: 'Material Didático (Modelos)', id: 'material' }, // NOVA OPÇÃO
+                                { text: 'Material Didático (Modelos)', id: 'material' }, 
+                                { text: 'Consultar Pagamento (SPU)', id: 'pagamento' }, // NOVA OPÇÃO
                                 { text: 'Informações de Contato', id: 'contato' }
                             ]);
                             break;
@@ -512,7 +573,7 @@
                             ]);
                             break;
                         
-                        // NOVO FLUXO: Material Didático
+                        // Fluxo: Material Didático
                         case 'material':
                             addMessage('bot', 'Sobre o Material Didático (Apostila e Slides). O que gostaria de saber?');
                             showOptions([
@@ -536,6 +597,21 @@
                             ]);
                             break;
 
+                        // NOVO FLUXO: Pagamento
+                        case 'pagamento':
+                            addMessage('bot', 'O tutorial completo para consultar seu processo de pagamento está na <strong>Seção 4</strong> do manual. O processo é despachado cerca de 10 dias úteis após o curso. O que mais gostaria de saber?');
+                            showOptions([
+                                { text: 'E se eu não tiver acesso ao SPU?', id: 'pagamento_spu' },
+                                { text: 'Voltar ao início', id: 'start' }
+                            ]);
+                            break;
+                        case 'pagamento_spu':
+                            addMessage('bot', 'Caso você não tenha acesso ao "SPU Digital Corporativo", você deve consultar o Protocolo do seu órgão ou o setor de Folha de Pagamento. Se preferir, pode ligar para nós: <strong>2018.0112</strong> ou <strong>2018.0122</strong>.');
+                            showOptions([
+                                { text: 'Voltar ao início', id: 'start' }
+                            ]);
+                            break;
+
 
                         // Fluxo de Contato
                         case 'contato':
@@ -543,7 +619,8 @@
                             showOptions([
                                 { text: 'Dúvidas sobre Credenciamento', id: 'credenciamento' },
                                 { text: 'Dúvidas sobre Documentos', id: 'precourse' },
-                                { text: 'Dúvidas sobre Material Didático', id: 'material' }
+                                { text: 'Dúvidas sobre Material Didático', id: 'material' },
+                                { text: 'Dúvidas sobre Pagamento', id: 'pagamento' } // NOVA OPÇÃO
                             ]);
                             break;
                     }
